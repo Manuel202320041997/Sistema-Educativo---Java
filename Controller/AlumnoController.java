@@ -17,8 +17,6 @@ private CarreraController carreraController = new CarreraController();
     }
     
     public List<Alumno> listarAlumnoEstado(){
-    	/*List<Alumno> listarAlumno = null;
-    	listarAlumno = alumnoDaoImpl.listarAlumno();*/
     	List<Alumno> listaCompleta = alumnoDaoImpl.listarAlumno();
         List<Alumno> listaFiltrada = new ArrayList<>();
 
@@ -42,14 +40,14 @@ private CarreraController carreraController = new CarreraController();
     	        Alumno alumnoObj = new Alumno();
     	        alumnoObj.setNombres(alumno.getNombres());
     	        alumnoObj.setCorreo(alumno.getCorreo());
-    	        alumnoObj.setCarrera(String.valueOf(idCarrera)); // Convierte el ID a String
+    	        alumnoObj.setCarrera(String.valueOf(idCarrera)); 
     	        alumnoObj.setCategoria(String.valueOf(idCategoria));
     	        alumnoObj.setSemestre(String.valueOf(idSemestre));
 
-    	        // Llamar a tu DAO para agregar el alumno a la base de datos
+    	        // Llamar a funcion registrarAlumno de DaoImpl
     	        alumnoDaoImpl.registrarAlumno(alumnoObj);
     	    } catch (Exception e) {
-    	        e.printStackTrace(); // Manejo de excepciones, puedes personalizarlo según tus necesidades
+    	        e.printStackTrace();
     	    }
     }
     
@@ -58,6 +56,6 @@ private CarreraController carreraController = new CarreraController();
     }
     
     public Alumno obtenerAlumnoPorId(int idAlumno) {
-        return alumnoDaoImpl.obtenerAlumnoPorId(idAlumno); // alumnoDao es una instancia de tu clase AlumnoDao
+        return alumnoDaoImpl.obtenerAlumnoPorId(idAlumno); // alumnoDao es una instancia de AlumnoDao
     }
 }
