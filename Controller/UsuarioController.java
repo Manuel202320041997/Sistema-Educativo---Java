@@ -20,7 +20,7 @@ public class UsuarioController {
     public Usuario validarLogin(String nombreUsuario, String clave) {
     	List<Usuario> usuarios = listarUsuarios();
     	
-    	for(Usuario usuario : usuarios) { //variable "usuario" toma valores de lista "usuarios"
+    	for(Usuario usuario : usuarios) { 
     		if(usuario.getNombre().equals(nombreUsuario) && usuario.getClave().equals(clave)) {
     			return usuario;
     		}    		
