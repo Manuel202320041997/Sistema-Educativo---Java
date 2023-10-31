@@ -58,14 +58,14 @@ public class frm_Inicio extends JFrame {
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        //this.usuariovalidado = usuariovalidado;
-        String nombreUsuario = usuariovalidado.getNombre();
-        setUndecorated(true);
+        
+        	String nombreUsuario = usuariovalidado.getNombre();
+        	setUndecorated(true);
 		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 0, 0);
-	    panel.setBackground(new Color(0, 128, 192));
+	    	panel.setBackground(new Color(0, 128, 192));
 		contentPane.setLayout(null);
 		
 		contentPane.add(panel);
@@ -84,9 +84,7 @@ public class frm_Inicio extends JFrame {
         panel_1.add(lblNewLabel_1);
         lblNewLabel_1.setForeground(Color.WHITE);
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-                
-                
-        //ImageIcon iconoInstituto = new ImageIcon(getClass().getResource("/Img/logoinicono.png"));
+                        
         JLabel lblNewLabel = new JLabel("I.E.S. CESAL");
         lblNewLabel.setIcon(new ImageIcon(frm_Inicio.class.getResource("/Img/logoinspng80icono.png")));
         lblNewLabel.setBounds(10, 7, 271, 72);
@@ -128,17 +126,7 @@ public class frm_Inicio extends JFrame {
         
         JMenuItem submenuGestionarPension = new JMenuItem("Gestionar Pensiones");        
         
-        JMenuItem submenuCerrarSesion = new JMenuItem("Cerrar Sesion");
-        submenuCerrarSesion.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent arg0) {
-        		int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro que deseas cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
-
-        		if (confirm == JOptionPane.YES_OPTION) {
-        		    
-        		    System.exit(0);
-        		}
-        	}
-        });
+        JMenuItem submenuCerrarSesion = new JMenuItem("Cerrar Sesion");        
         
         // Iconos JMenuItems
         ImageIcon iconosubmenuGestionarAlumno = new ImageIcon(getClass().getResource("/Img/gestionaralum.png"));
@@ -201,6 +189,17 @@ public class frm_Inicio extends JFrame {
         		ifrm_GestionarPension ifrm_gestionarpension =  new ifrm_GestionarPension();
         		desktopPane_1.add(ifrm_gestionarpension);
         		ifrm_gestionarpension.setVisible(true);
+        	}
+        });
+
+	submenuCerrarSesion.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro que deseas cerrar sesión?", "Cerrar Sesión", JOptionPane.YES_NO_OPTION);
+
+        		if (confirm == JOptionPane.YES_OPTION) {
+        		    
+        		    System.exit(0);
+        		}
         	}
         });
 		
