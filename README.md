@@ -1,1 +1,1 @@
-# Sistema-Educativo---Java
+# Sistema-Educativo-Java
