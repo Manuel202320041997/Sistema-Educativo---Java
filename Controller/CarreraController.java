@@ -32,8 +32,8 @@ public class CarreraController {
 		            JOptionPane.showMessageDialog(null, "La carrera no se encuentra en la base de datos.", "Carrera no encontrada", JOptionPane.WARNING_MESSAGE);
 		            return -1;
 		        }
-		    } catch (Exception e) { // Captura cualquier excepción genérica
-		        e.printStackTrace(); // Imprime la información de la excepción en la consola para depuración
+		    } catch (Exception e) { 
+		        e.printStackTrace();
 		        JOptionPane.showMessageDialog(null, "Error al obtener el ID de la carrera.", "Error", JOptionPane.ERROR_MESSAGE);
 		        return -1;
 		    }
