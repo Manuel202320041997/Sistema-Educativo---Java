@@ -175,14 +175,13 @@ public class ifrm_GestionarNotas extends JInternalFrame {
 		modelo = new DefaultTableModel(new Object[][] {}, nombresSemestres);
 
 		 tblSemestre = new JTable(modelo);
-		 tblSemestre.getColumnModel().getColumn(0).setPreferredWidth(100); // ID
-		 tblSemestre.getColumnModel().getColumn(1).setPreferredWidth(100); // Nombre
-		 tblSemestre.getColumnModel().getColumn(2).setPreferredWidth(100); // Correo
-		 tblSemestre.getColumnModel().getColumn(3).setPreferredWidth(100); // Carrera
-		 tblSemestre.getColumnModel().getColumn(4).setPreferredWidth(100); // Categoria
-		 tblSemestre.getColumnModel().getColumn(5).setPreferredWidth(100); // Semestre
-		 	
-		 //mostrarTabla();
+		 tblSemestre.getColumnModel().getColumn(0).setPreferredWidth(100); // S1
+		 tblSemestre.getColumnModel().getColumn(1).setPreferredWidth(100); // S2
+		 tblSemestre.getColumnModel().getColumn(2).setPreferredWidth(100); // S3
+		 tblSemestre.getColumnModel().getColumn(3).setPreferredWidth(100); // S4
+		 tblSemestre.getColumnModel().getColumn(4).setPreferredWidth(100); // S5
+		 tblSemestre.getColumnModel().getColumn(5).setPreferredWidth(100); // S6
+
 		 // Crear un JScrollPane y agregar la JTable a él
 		 JScrollPane scrollPane = new JScrollPane(tblSemestre);
 		 scrollPane.setBounds(262, 11, 622, 448);
@@ -205,7 +204,7 @@ public class ifrm_GestionarNotas extends JInternalFrame {
 		             
 		             cargarOpcionesSemestre(alumno);
 		             cboSemestre.setSelectedItem(semestre);
-		             //txtBuscar.setText("");
+
 		  		} else {
 		  			JOptionPane.showMessageDialog(ifrm_GestionarNotas.this, "No se ha encontrado un Alumno con este ID en nuestra base de datos. Ingrese uno correspondiente por favor.", "Advertencia", JOptionPane.WARNING_MESSAGE);
 		  		}
@@ -235,10 +234,10 @@ public class ifrm_GestionarNotas extends JInternalFrame {
 			            }
 			        } catch (SemestreNoEncontradoException e) {
 			            e.printStackTrace();
-			            // Manejo de SemestreNoEncontradoException
+
 			        } catch (BaseDeDatosException e) {
 			            e.printStackTrace();
-			            // Manejo de BaseDeDatosException
+
 			        }
 			    }
 			});
