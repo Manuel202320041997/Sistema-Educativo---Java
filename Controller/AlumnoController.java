@@ -56,6 +56,6 @@ private CarreraController carreraController = new CarreraController();
     }
     
     public Alumno obtenerAlumnoPorId(int idAlumno) {
-        return alumnoDaoImpl.obtenerAlumnoPorId(idAlumno); // alumnoDao es una instancia de AlumnoDao
+        return alumnoDaoImpl.obtenerAlumnoPorId(idAlumno);
     }
 }
