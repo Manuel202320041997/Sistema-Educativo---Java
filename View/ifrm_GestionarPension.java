@@ -246,19 +246,19 @@ public class ifrm_GestionarPension extends JInternalFrame {
 		  		Alumno alumno = controller.obtenerAlumnoPorId(idAlumnoBuscado);
 
 		  		if (alumno != null) {
-		             txtNombres.setText(alumno.getNombres());
-		             txtCorreo.setText(alumno.getCorreo());
-		             txtCarrera.setText(alumno.getCarrera());
-		             txtCategoria.setText(alumno.getCategoria());
-		             txtSemestre.setText(alumno.getSemestre());
+		             		txtNombres.setText(alumno.getNombres());
+		             		txtCorreo.setText(alumno.getCorreo());
+		             		txtCarrera.setText(alumno.getCarrera());
+		             		txtCategoria.setText(alumno.getCategoria());
+		             		txtSemestre.setText(alumno.getSemestre());
 		             
 		             
-		             Notas ultimaNota = notasController.obtenerUltimaNota(alumno.getId());
-		             if (ultimaNota != null) {
-		                 txtNota.setText(String.valueOf(ultimaNota.getPromedio()));
-		             } else {
-		            	 txtNota.setText("N/A");
-		             }
+		             		Notas ultimaNota = notasController.obtenerUltimaNota(alumno.getId());
+		             	if (ultimaNota != null) {
+		                	 txtNota.setText(String.valueOf(ultimaNota.getPromedio()));
+		             	} else {
+		            		 txtNota.setText("N/A");
+		             	}
 		             
 		             
 		             
@@ -283,13 +283,13 @@ public class ifrm_GestionarPension extends JInternalFrame {
 					double nota = Double.parseDouble(txtNota.getText());
 					
 					double pension = pensionController.calcularPension(categoria, semestre, nota);
-   				    String porcentajeDescuento = pensionController.obtenerPorcentajeDescuento(nota);
-   				    String pensionInicial = pensionController.obtenerPensionCategoria(categoria);
+   				    	String porcentajeDescuento = pensionController.obtenerPorcentajeDescuento(nota);
+   				    	String pensionInicial = pensionController.obtenerPensionCategoria(categoria);
 
-   			        txtDescuento.setText(porcentajeDescuento);
-   			        txtPensionInicial.setText(pensionInicial);
-					
+   			        	txtDescuento.setText(porcentajeDescuento);
+   			        	txtPensionInicial.setText(pensionInicial);					
 					txtPension.setText("S/."+ pension);
+					
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(ifrm_GestionarPension.this, "Que raro que no se haya calcular xd.", "Advertencia", JOptionPane.WARNING_MESSAGE);
 				}
